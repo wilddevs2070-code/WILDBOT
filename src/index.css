@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "VT323", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Press Start 2P", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#1a1a1a] text-[#e0e0e0] font-sans overflow-hidden;
+  }
+}
+
+/* Liquid Neon Spectrum Background */
+@keyframes liquid-neon {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-particles {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+}
+
+.cyber-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+  background-size: 1200% 1200%;
+  animation: liquid-neon 15s ease infinite;
+  z-index: -1;
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  animation: float-particles 10s linear infinite;
+}
+
+/* Industrial/Eerie effect */
+.glow-effect {
+  box-shadow: 0 0 15px rgba(255, 50, 50, 0.3), 0 0 30px rgba(255, 50, 50, 0.1);
+  border: 2px solid #ff3232;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px #ff3232;
+}
+
+/* Cyberpunk Glow Effect */
+.cyber-glow {
+  transition: all 0.3s ease;
+}
+.cyber-glow:hover {
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
+  border-color: #00ffff;
+}
+
+/* Poppy Playtime Theme Classes */
+.mc-dirt {
+  @apply bg-[#1a1a1a];
+}
+
+.mc-panel {
+  @apply bg-[#252535] border-2 border-[#4a4a6a] shadow-lg;
+}
+
+.mc-panel-dark {
+  @apply bg-[#151525] border-2 border-[#3a3a5a] shadow-lg;
+}
+
+.mc-button {
+  @apply relative px-4 py-2 bg-[#ff3232] border-2 border-[#ff6666] text-white font-display text-[10px] uppercase tracking-wider transition-all hover:bg-[#ff5555] hover:shadow-[0_0_15px_#ff3232] active:scale-95;
+}
+
+.mc-button-green {
+  @apply bg-[#32ff32] border-[#66ff66] text-black hover:bg-[#55ff55] hover:shadow-[0_0_15px_#32ff32];
+}
+
+.mc-button-blue {
+  @apply bg-[#3232ff] border-[#6666ff] text-white hover:bg-[#5555ff] hover:shadow-[0_0_15px_#3232ff];
+}
+
+.cyber-panel {
+  @apply bg-[#1a1a2e]/80 backdrop-blur-xl border border-white/10 shadow-2xl rounded-3xl;
+}
+
+.cyber-button {
+  @apply relative px-4 py-2 bg-[#00ffff]/20 border border-[#00ffff]/50 text-[#00ffff] font-display text-[10px] uppercase tracking-wider transition-all hover:bg-[#00ffff]/40 hover:shadow-[0_0_15px_#00ffff] active:scale-95;
+}
